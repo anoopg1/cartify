@@ -33,6 +33,7 @@ class CategoryWidget extends StatelessWidget {
     return Column(
       children: [
         Container(
+          
           height: deviceHeight * 0.20,
           width: deviceWidth * 0.45,
           decoration: BoxDecoration(
