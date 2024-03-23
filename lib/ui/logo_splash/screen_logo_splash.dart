@@ -39,7 +39,7 @@ class ScreenLogoSplash extends StatelessWidget {
                 ),
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ScreenLoginSignup(),
+                    builder: (context) => const ScreenLoginSignup(),
                   ));
                 },
                 child: const Text(

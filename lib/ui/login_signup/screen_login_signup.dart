@@ -1,3 +1,5 @@
+import 'package:cartify/ui/login/screen_login.dart';
+import 'package:cartify/ui/signup/screen_signup.dart';
 import 'package:flutter/material.dart';
 
 class ScreenLoginSignup extends StatelessWidget {
@@ -64,7 +66,11 @@ class ScreenLoginSignup extends StatelessWidget {
                             ),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const ScreenLogin(),
+                          ));
+                        },
                         child: const Text(
                           "LOGIN",
                           style: TextStyle(color: Colors.white),
@@ -89,7 +95,13 @@ class ScreenLoginSignup extends StatelessWidget {
                                     const BorderSide(color: Color(0xFF1C3C3A))),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ScreenSignup(),
+                            ),
+                          );
+                        },
                         child: const Text(
                           "SIGN UP",
                           style: TextStyle(
