@@ -1,4 +1,5 @@
 import 'package:cartify/ui/login/screen_login.dart';
+import 'package:cartify/ui/wishlist/screen_wishlist.dart';
 import 'package:flutter/material.dart';
 
 class ScreenSignup extends StatelessWidget {
@@ -147,7 +148,7 @@ class ScreenSignup extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const ScreenLogin(),
+                              builder: (context) => const ScreenWishlist(),
                             ),
                           );
                         },

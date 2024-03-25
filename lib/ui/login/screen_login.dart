@@ -1,4 +1,5 @@
 import 'package:cartify/ui/home/screen_home.dart';
+import 'package:cartify/ui/landing_page/screen_landing.dart';
 import 'package:flutter/material.dart';
 
 class ScreenLogin extends StatelessWidget {
@@ -131,7 +132,7 @@ class ScreenLogin extends StatelessWidget {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const ScreenHome(),
+                              builder: (context) => const ScreenLanding(),
                             ),
                           );
                         },

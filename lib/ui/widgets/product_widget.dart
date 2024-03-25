@@ -49,6 +49,13 @@ class ProductWidget extends StatelessWidget {
                     ),
                   ),
                 ),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: Icon(
+                    Icons.favorite_border_rounded,
+                    color: Color(0xFF317773),
+                  ),
+                ),
               ),
               Text(
                 brand,
@@ -67,7 +74,7 @@ class ProductWidget extends StatelessWidget {
                         const TextStyle(decoration: TextDecoration.lineThrough),
                   ),
                 ],
-              )
+              ),
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:cartify/ui/category/screen_category.dart';
 import 'package:cartify/ui/home/widgets/courosel_widget.dart';
+import 'package:cartify/ui/popular/screen_popular.dart';
 import 'package:cartify/ui/widgets/bottom_navigation_widget.dart';
 import 'package:cartify/ui/widgets/category_widget.dart';
 import 'package:cartify/ui/widgets/product_widget.dart';
@@ -109,21 +110,28 @@ class ScreenHome extends StatelessWidget {
               ],
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
+          Padding(
+            padding: const EdgeInsets.only(left: 15, right: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   "Popular",
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 22),
                 ),
-                Text(
-                  "See All",
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
-                      color: Color(0xFF317773)),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const ScreenPopular(),
+                    ));
+                  },
+                  child: const Text(
+                    "See All",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                        color: Color(0xFF317773)),
+                  ),
                 )
               ],
             ),
@@ -165,7 +173,6 @@ class ScreenHome extends StatelessWidget {
           )
         ],
       ),
-      bottomNavigationBar: const BottomNavigationWidget(),
     );
   }
 }
