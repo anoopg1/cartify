@@ -9,6 +9,7 @@ import 'package:cartify/ui/signup/signup_view.dart';
 import 'package:cartify/ui/splash_screen/splash_screen_view.dart';
 import 'package:cartify/ui/wishlist_page/wishlist_page_view.dart';
 import 'package:stacked/stacked_annotations.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 @StackedApp(
   routes: [
@@ -22,6 +23,10 @@ import 'package:stacked/stacked_annotations.dart';
     MaterialRoute(page: WishlistPageView),
     MaterialRoute(page: CartView),
     MaterialRoute(page: ProfilePageView),
+  ],
+  dependencies: [
+    LazySingleton(classType: NavigationService),
+    // @stacked-service
   ],
 )
 class App {}
