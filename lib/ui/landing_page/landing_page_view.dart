@@ -11,7 +11,11 @@ class LandingPageView extends StatelessWidget {
     return ViewModelBuilder.reactive(
       viewModelBuilder: () => LandingPageViewmodel(),
       builder: (context, viewModel, child) => Scaffold(
-        bottomNavigationBar: BottomNavigationBarWidget(),
+        body: viewModel.pages[viewModel.currentIndex],
+        bottomNavigationBar: BottomNavigationBarWidget(
+          currentIndex: viewModel.currentIndex,
+          onChanged: (value) => viewModel.changeIndex(value),
+        ),
       ),
     );
   }

@@ -23,7 +23,7 @@ class WishlistWidget extends StatelessWidget {
         height: screenHeight(context) * 0.15,
         width: screenWidth(context) * 0.95,
         decoration: BoxDecoration(
-            color: Colors.grey.shade300,
+            color: Colors.grey.shade100,
             borderRadius: BorderRadius.circular(10)),
         child: Padding(
           padding: const EdgeInsets.only(top: 7, left: 15, right: 15),
@@ -57,11 +57,15 @@ class WishlistWidget extends StatelessWidget {
                         Text(
                           product,
                           softWrap: false,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: getResponsiveMassiveFontSize(context)),
                         ),
                         Text(
                           "₹$price",
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: getResponsiveMassiveFontSize(context)),
                         )
                       ],
                     ),

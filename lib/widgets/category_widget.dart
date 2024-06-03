@@ -34,8 +34,10 @@ class CategoryWidget extends StatelessWidget {
             flex: 1,
             child: Text(
               categoryName,
-              style: const TextStyle(
-                  fontSize: 16, color: kblack, fontWeight: FontWeight.w500),
+              style: TextStyle(
+                  fontSize: getResponsiveMassiveFontSize(context),
+                  color: kblack,
+                  fontWeight: FontWeight.w500),
             ),
           )
         ],

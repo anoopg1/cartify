@@ -1,3 +1,4 @@
+import 'package:cartify/core/ui_helpers.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -41,7 +42,10 @@ class CustomButton extends StatelessWidget {
           child: Center(
             child: Text(
               buttonText,
-              style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: textColor,
+                  fontWeight: FontWeight.bold,
+                  fontSize: getResponsiveMassiveFontSize(context)),
             ),
           ),
         ),

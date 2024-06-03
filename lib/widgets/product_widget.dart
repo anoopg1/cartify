@@ -22,23 +22,10 @@ class ProductWidget extends StatelessWidget {
       color: Colors.white,
       elevation: 4,
       child: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, top: 2, bottom: 8),
+        padding: const EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Stack(
-              children: [
-                Align(
-                  alignment: Alignment.topRight,
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.favorite_border,
-                        color: klightGreen,
-                      )),
-                )
-              ],
-            ),
             Expanded(
               flex: 5,
               child: Container(
@@ -49,16 +36,25 @@ class ProductWidget extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(10),
                 ),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.favorite_border,
+                        color: klightGreen,
+                      )),
+                ),
               ),
             ),
             Expanded(
               flex: 1,
               child: Text(
                 brand,
-                style: const TextStyle(
+                style: TextStyle(
                   color: kmediumTextGrey,
                   fontWeight: FontWeight.w700,
-                  fontSize: 16,
+                  fontSize: getResponsiveExtraLargeFontSize(context),
                 ),
               ),
             ),
@@ -66,8 +62,10 @@ class ProductWidget extends StatelessWidget {
               flex: 1,
               child: Text(
                 product,
-                style: const TextStyle(
-                    fontSize: 17, color: kblack, fontWeight: FontWeight.w500),
+                style: TextStyle(
+                    fontSize: getResponsiveExtraLargeFontSize(context),
+                    color: kblack,
+                    fontWeight: FontWeight.w500),
               ),
             ),
             Expanded(
@@ -76,19 +74,19 @@ class ProductWidget extends StatelessWidget {
                 children: [
                   Text(
                     "₹$offerprice",
-                    style: const TextStyle(
+                    style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: getResponsiveMassiveFontSize(context),
                         color: kblack),
                   ),
                   horizontalSpaceSmall,
                   Text(
                     "₹$mrpPrice",
-                    style: const TextStyle(
+                    style: TextStyle(
                       decoration: TextDecoration.lineThrough,
                       fontWeight: FontWeight.bold,
                       color: kmediumTextGrey,
-                      fontSize: 16,
+                      fontSize: getResponsiveMassiveFontSize(context),
                     ),
                   )
                 ],

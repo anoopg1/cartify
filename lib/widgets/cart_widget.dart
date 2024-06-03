@@ -20,7 +20,7 @@ class CartWidget extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: screenHeight(context) * 0.13,
+          height: screenHeight(context) * 0.11,
           width: screenWidth(context) * 0.93,
           decoration: const BoxDecoration(color: Colors.transparent),
         ),
@@ -30,10 +30,10 @@ class CartWidget extends StatelessWidget {
             elevation: 4,
             borderRadius: BorderRadius.circular(12),
             child: Container(
-              height: screenHeight(context) * 0.12,
+              height: screenHeight(context) * 0.10,
               width: screenWidth(context) * 0.92,
               decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
+                  color: Colors.grey.shade100,
                   borderRadius: BorderRadius.circular(12)),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -43,8 +43,8 @@ class CartWidget extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          height: screenHeight(context) * 0.09,
-                          width: screenWidth(context) * 0.25,
+                          height: screenHeight(context) * 0.08,
+                          width: screenWidth(context) * 0.22,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             color: Colors.amber,
@@ -62,21 +62,25 @@ class CartWidget extends StatelessWidget {
                             Text(
                               product,
                               softWrap: false,
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize:
+                                      getResponsiveMassiveFontSize(context)),
                             ),
                             Text(
                               price,
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize:
+                                      getResponsiveMassiveFontSize(context)),
                             )
                           ],
                         ),
                       ],
                     ),
                     Container(
-                      height: screenHeight(context) * 0.043,
-                      width: screenWidth(context) * 0.22,
+                      height: screenHeight(context) * 0.037,
+                      width: screenWidth(context) * 0.20,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(29),
                           border: Border.all(width: 1, color: kblack)),
@@ -90,7 +94,9 @@ class CartWidget extends StatelessWidget {
                           ),
                           Text(
                             quantity.toString(),
-                            style: const TextStyle(fontSize: 18),
+                            style: TextStyle(
+                                fontSize:
+                                    getResponsiveMassiveFontSize(context)),
                           ),
                           const Icon(
                             Icons.add,

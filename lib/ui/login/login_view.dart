@@ -19,31 +19,38 @@ class LoginView extends StatelessWidget {
         body: Column(
           children: [
             SizedBox(
-              height: screenHeight(context) * 0.30,
+              height: screenHeight(context) * 0.35,
               child: Center(
                 child: Assets.images.logo.image(
                     height: screenHeight(context) * 0.30,
                     width: screenWidth(context) * 0.30),
               ),
             ),
+
+            // WHITE CONTAINER
             Expanded(
               child: Container(
                 decoration: const BoxDecoration(
                   color: kwhite,
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(35),
-                      topRight: Radius.circular(35)),
+                    topLeft: Radius.circular(35),
+                    topRight: Radius.circular(35),
+                  ),
                 ),
+
+                // LOGIN WITH EMAIL AND PASSWORD
                 child: Padding(
                   padding: const EdgeInsets.only(
                       left: 50, right: 50, top: 30, bottom: 60),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Text(
+                      Text(
                         "WELCOME BACK!",
                         style: TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.w600),
+                            fontSize: getResponsiveFontSize(context,
+                                fontSize: 45, max: 50),
+                            fontWeight: FontWeight.w600),
                       ),
                       CustomTextfield(
                         controller: viewModel.emailController,
@@ -60,30 +67,47 @@ class LoginView extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              // REMEMBER PASSWORD
                               Row(
                                 children: [
                                   Checkbox(
-                                    value: true,
-                                    onChanged: (value) {},
+                                    value: viewModel.rememberPassword,
+                                    onChanged: (value) {
+                                      viewModel.rememberPasswordStatus(value);
+                                    },
                                   ),
-                                  const Text("Remember me")
+                                  Text(
+                                    "Remember me",
+                                    style: TextStyle(
+                                        fontSize:
+                                            getResponsiveExtraLargeFontSize(
+                                                context)),
+                                  )
                                 ],
                               ),
+
+                              // FORGET PASSWORD
                               TextButton(
-                                onPressed: () {},
-                                child: const Text(
+                                onPressed: () {
+                                  viewModel.resetPassword();
+                                },
+                                child: Text(
                                   "Forget Password?",
                                   style: TextStyle(
                                       color: kblack,
-                                      fontWeight: FontWeight.w600),
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: getResponsiveExtraLargeFontSize(
+                                          context)),
                                 ),
                               ),
                             ],
                           ),
                         ],
                       ),
+
+                      // LOGIN BUTTON
                       CustomButton(
-                        height: screenHeight(context) * 0.050,
+                        height: screenHeight(context) * 0.045,
                         width: screenWidth(context) * 0.82,
                         buttonColor: kdarkGreen,
                         textColor: kwhite,
@@ -93,22 +117,44 @@ class LoginView extends StatelessWidget {
                         },
                       ),
                       const Text("or"),
+
+                      // LOGIN WITH GOOGLE OR FACEBOOK
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Assets.images.fbLogo.image(height: 50),
+                          InkWell(
+                            onTap: () {
+                              viewModel.loginWithFacebook();
+                            },
+                            child: Assets.images.fbLogo.image(height: 40),
+                          ),
                           horizontalSpaceMedium,
-                          Assets.images.googleLogo.image(height: 50),
+                          InkWell(
+                            onTap: () {
+                              viewModel.loginWithGoogleAccount();
+                            },
+                            child: Assets.images.googleLogo.image(height: 40),
+                          ),
                         ],
                       ),
-                      const Row(
+
+                      // SIGNUP TEXT BUTTON
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Don’t have an account? "),
+                          Text(
+                            "Don’t have an account? ",
+                            style: TextStyle(
+                                fontSize:
+                                    getResponsiveExtraLargeFontSize(context)),
+                          ),
                           InkWell(
+                            onTap: () => viewModel.navigateToSignupScreen(),
                             child: Text(
                               "Sign up",
                               style: TextStyle(
+                                  fontSize:
+                                      getResponsiveExtraLargeFontSize(context),
                                   fontWeight: FontWeight.bold,
                                   color: klightGreen),
                             ),

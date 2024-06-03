@@ -1,8 +1,11 @@
 import 'package:cartify/app/app.router.dart';
+import 'package:cartify/services/api_services.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked_services/stacked_services.dart';
 
-void main() {
+void main() async {
+  await ApiServices().fetchCategories();
+  await ApiServices().fetchProducts();
   runApp(const MyApp());
 }
 
